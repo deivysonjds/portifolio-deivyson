@@ -1,26 +1,49 @@
-// src/components/Contact.jsx
 'use client';
 
 import { useThemeStore } from '@/stores/themeStore';
+import { useMessageStore } from '@/stores/messageStore';
 import { FiSend } from 'react-icons/fi';
 
 export default function Contact() {
   const { theme } = useThemeStore();
+  const { name, title,email, body, setName, setTitle,setEmail, setBody, clearForm } = useMessageStore();
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    if (id === 'name') setName(value);
+    if (id === 'email') setEmail(value);
+    if (id === 'subject') setTitle(value);
+    if (id === 'message') setBody(value);
+    console.log(`name: ${name}, email: ${email}, title: ${title}, body: ${body}`);
+    
+  }
+
+   const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const message = `*Nova mensagem via site*\n\n *Nome:* ${name}\n *E-mail:* ${email}\n *Assunto:* ${title}\n\n *Mensagem:*\n${body}`;
+    const phoneNumber = process.env.NEXT_PUBLIC_NUMBER;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+
+    clearForm();
+  };
 
   return (
     <section id="contact" className={`${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} py-20`}>
       <div className="container mx-auto px-6">
         <h2 className={`text-3xl font-bold mb-12 text-center ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
-          Get In <span className="text-purple-500">Touch</span>
+          Entre em <span className="text-purple-500">contato</span>
         </h2>
         
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/2">
             <h3 className={`text-2xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
-              Contact Information
+              Informações de contato
             </h3>
             <p className={`mb-6 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-              Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible.
+              Entre em contato comigo para quaisquer dúvidas ou oportunidades. Responderei o mais breve possível.
             </p>
             
             <div className="space-y-4">
@@ -32,7 +55,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>Email</h4>
-                  <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>deivyson@example.com</p>
+                  <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>dev.deivyson@gmail.com</p>
                 </div>
               </div>
               
@@ -43,22 +66,22 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>Phone</h4>
-                  <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>+55 (XX) XXXX-XXXX</p>
+                  <h4 className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>celular</h4>
+                  <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>+55 (81) 98899-3441</p>
                 </div>
               </div>
             </div>
           </div>
           
           <div className="md:w-1/2">
-            <form className="space-y-6">
+            <form className="space-y-6" onChange={handleChange} onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label 
                     htmlFor="name" 
                     className={`block mb-2 text-sm font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
                   >
-                    Your Name
+                    Seu nome
                   </label>
                   <input 
                     type="text" 
@@ -74,13 +97,13 @@ export default function Contact() {
                     htmlFor="email" 
                     className={`block mb-2 text-sm font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
                   >
-                    Your Email
+                    Seu e-mail
                   </label>
                   <input 
                     type="email" 
                     id="email" 
                     className={`w-full px-4 py-2 rounded-lg border ${theme === 'dark' ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'}`}
-                    placeholder="john@example.com"
+                    placeholder="john@exemplo.com"
                     required
                   />
                 </div>
@@ -91,13 +114,13 @@ export default function Contact() {
                   htmlFor="subject" 
                   className={`block mb-2 text-sm font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
                 >
-                  Subject
+                  Assunto
                 </label>
                 <input 
                   type="text" 
                   id="subject" 
                   className={`w-full px-4 py-2 rounded-lg border ${theme === 'dark' ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'}`}
-                  placeholder="Let me know how I can help you"
+                  placeholder="Deixe-me saber como posso ajudá-lo"
                   required
                 />
               </div>
@@ -107,13 +130,13 @@ export default function Contact() {
                   htmlFor="message" 
                   className={`block mb-2 text-sm font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
                 >
-                  Your Message
+                  Sua mensagem
                 </label>
                 <textarea 
                   id="message" 
                   rows="4" 
                   className={`w-full px-4 py-2 rounded-lg border ${theme === 'dark' ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'}`}
-                  placeholder="Write your message here..."
+                  placeholder="Escreva sua mensagem aqui..."
                   required
                 ></textarea>
               </div>
@@ -122,7 +145,7 @@ export default function Contact() {
                 type="submit" 
                 className="flex items-center justify-center w-full md:w-auto bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition"
               >
-                Send Message <FiSend className="ml-2" />
+                Enviar mensagem <FiSend className="ml-2" />
               </button>
             </form>
           </div>
