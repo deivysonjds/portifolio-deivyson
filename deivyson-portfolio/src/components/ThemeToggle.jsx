@@ -1,4 +1,3 @@
-// src/components/ThemeToggle.jsx
 'use client';
 
 import { useThemeStore } from '@/stores/themeStore';

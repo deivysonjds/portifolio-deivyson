@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 'use client';
 
 import { useThemeStore } from '@/stores/themeStore';

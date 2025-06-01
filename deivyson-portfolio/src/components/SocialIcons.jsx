@@ -1,4 +1,3 @@
-// src/components/SocialIcons.jsx
 'use client';
 
 import { mainSocialLinks } from '@/constants/sociallinks';
@@ -15,7 +14,7 @@ export default function SocialIcons({ className = '' }) {
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-2xl transition ${theme === 'dark' ? 'text-white hover:text-white hover:scale-125' : 'text-black hover:text-black hover:scale-125'}`}
+          className={`text-2xl transition hover:scale-105 transform ${theme === 'dark' ? 'text-white hover:text-white hover:scale-125' : 'text-black hover:text-black hover:scale-125'}`}
           aria-label={social.name}
         >
           {social.icon}

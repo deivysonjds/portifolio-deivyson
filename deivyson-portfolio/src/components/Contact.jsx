@@ -143,7 +143,7 @@ export default function Contact() {
               
               <button 
                 type="submit" 
-                className="flex items-center justify-center w-full md:w-auto bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition"
+                className="hover:scale-105 transition transform flex items-center justify-center w-full md:w-auto bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition"
               >
                 Enviar mensagem <FiSend className="ml-2" />
               </button>

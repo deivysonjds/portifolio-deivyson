@@ -1,4 +1,3 @@
-// src/components/Skills.jsx
 'use client';
 
 import { skills } from '@/constants/skills';
@@ -18,7 +17,7 @@ export default function Skills() {
           {skills.map((skill) => (
             <div 
               key={skill.name}
-              className={`p-6 rounded-xl flex flex-col items-center transition-all hover:scale-120 ${theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'} shadow-md`}
+              className={`p-6 rounded-xl flex flex-col items-center transition-all hover:scale-105 transform ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-white hover:bg-gray-50'} shadow-md`}
             >
               <div className="text-4xl mb-3" style={{ color: skill.color }}>
                 {skill.icon}

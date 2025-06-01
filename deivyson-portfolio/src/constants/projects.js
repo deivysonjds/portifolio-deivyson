@@ -2,26 +2,20 @@
 export const projects = [
   {
     id: 1,
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce platform with product listings, cart functionality, and secure checkout.',
-    technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Stripe'],
-    githubUrl: 'https://github.com/username/ecommerce-platform',
-    liveUrl: 'https://ecommerce.example.com',
+    title: 'LuckyLotto',
+    description: 'Uma plataforma de sorteio de números, nomes e distribuidor de equipes, ideal para sorteios de prêmios e organização de equipes.',
+    technologies: ['HTML', 'CSS', 'js'],
+    imgUrl: '/projeto_1.jpeg',
+    githubUrl: 'https://github.com/deivysonjds/sorteador',
+    liveUrl: 'https://sorteador-indol.vercel.app/',
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A productivity app for managing tasks with drag-and-drop functionality and team collaboration features.',
-    technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
+    title: 'Conversor fácil',
+    description: 'Uma plataforma de conversão de moeda, temperatura e medidas, com uma interface intuitiva e fácil de usar.',
+    technologies: ['React.js','nexts.js', 'Tailwind CSS'],
+    imgUrl: '/projeto_2.jpeg',
     githubUrl: 'https://github.com/username/task-manager',
     liveUrl: 'https://tasks.example.com',
-  },
-  {
-    id: 3,
-    title: 'Weather Dashboard',
-    description: 'Real-time weather information with 5-day forecast and location-based search.',
-    technologies: ['React', 'OpenWeather API', 'Chart.js'],
-    githubUrl: 'https://github.com/username/weather-app',
-    liveUrl: 'https://weather.example.com',
-  },
+  }
 ];

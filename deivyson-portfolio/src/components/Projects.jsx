@@ -1,4 +1,3 @@
-// src/components/Projects.jsx
 'use client';
 
 import { projects } from '@/constants/projects';
@@ -19,17 +18,14 @@ export default function Projects() {
           {projects.map((project) => (
             <div 
               key={project.id}
-              className={`rounded-xl overflow-hidden shadow-lg transition-all hover:scale-[1.02] ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}
+              className={`rounded-xl overflow-hidden shadow-lg transition-all hover:scale-[1.02] hover:scale-105 transform ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}
             >
-              <div className="h-48 bg-gray-300 relative overflow-hidden">
-                {/* Project image would go here */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                </div>
+              <div className="h-48 bg-gray-500 relative overflow-hidden">
+                <img className='h-full hover:scale-105 transition transform' src={`/projects${project.imgUrl}`} alt={project.title} />
               </div>
               
               <div className="p-6">
+                <h3 className={`text-xl font-semibold text-blck ${theme === 'dark' ? 'text-white' : '' }`}>{project.title}</h3>
                 <p className={`mb-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                   {project.description}
                 </p>
@@ -52,7 +48,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className={`flex items-center ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-black'}`}
                   >
-                    <FiGithub className="mr-1" /> Code
+                    <FiGithub className="mr-1" /> Código fonte
                   </a>
                   {project.liveUrl && (
                     <a 
@@ -61,7 +57,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className={`flex items-center ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-black'}`}
                     >
-                      <FiExternalLink className="mr-1" /> Live Demo
+                      <FiExternalLink className="mr-1" /> demonstração
                     </a>
                   )}
                 </div>

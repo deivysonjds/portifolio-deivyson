@@ -1,6 +1,4 @@
-// src/constants/socialLinks.js
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaYoutube, FaDev, FaCodepen, FaStackOverflow, FaMedium } from 'react-icons/fa';
-import { SiHashnode } from 'react-icons/si';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export const socialLinks = [
   {
@@ -12,7 +10,7 @@ export const socialLinks = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/seu-perfil',
+    url: 'https://www.linkedin.com/in/deivyson-silva-218b84297/',
     icon: <FaLinkedin />,
     color: 'text-blue-600',
     hoverColor: 'hover:text-blue-800 dark:hover:text-blue-400'
@@ -20,16 +18,15 @@ export const socialLinks = [
   
 ];
 
-// Versão simplificada para o componente SocialIcons (apenas ícones principais)
 export const mainSocialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/seu-usuario',
+    url: 'https://github.com/deivysonjds',
     icon: <FaGithub />
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/seu-perfil',
+    url: 'https://www.linkedin.com/in/deivyson-silva-218b84297/',
     icon: <FaLinkedin />
   },
 ];
