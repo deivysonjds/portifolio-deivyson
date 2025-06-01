@@ -1,17 +1,21 @@
 // tailwind.config.js
 module.exports = {
-  darkMode: 'class', // Adicione esta linha para habilitar o modo escuro
   content: [
-    './src/**/*.{js,jsx,ts,tsx}',
-    './app/**/*.{js,jsx,ts,tsx}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
-      colors: {
-        gray: {
-          800: '#1f2937', // Certifique-se que esta cor está definida
-        },
+      animation: {
+        'spin-slow': 'spin 5s linear infinite',
+        'spin-reverse': 'spin-reverse 8s linear infinite',
       },
+      keyframes: {
+        'spin-reverse': {
+          from: { transform: 'rotate(360deg)' },
+          to: { transform: 'rotate(0deg)' },
+        }
+      }
     },
   },
   plugins: [],

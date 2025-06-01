@@ -15,7 +15,7 @@ export default function SocialIcons({ className = '' }) {
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-2xl transition ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-black'}`}
+          className={`text-2xl transition ${theme === 'dark' ? 'text-white hover:text-white hover:scale-125' : 'text-black hover:text-black hover:scale-125'}`}
           aria-label={social.name}
         >
           {social.icon}
