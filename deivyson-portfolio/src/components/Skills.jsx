@@ -8,17 +8,17 @@ export default function Skills() {
   const { theme } = useThemeStore();
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className={`${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} py-20`}>
       <div className="container mx-auto px-6">
         <h2 className={`text-3xl font-bold mb-12 text-center ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
-          My <span className="text-purple-500">Skills</span>
+          Minhas <span className="text-purple-500">habilidades</span>
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {skills.map((skill) => (
             <div 
               key={skill.name}
-              className={`p-6 rounded-xl flex flex-col items-center transition-all hover:scale-105 ${theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'} shadow-md`}
+              className={`p-6 rounded-xl flex flex-col items-center transition-all hover:scale-120 ${theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'} shadow-md`}
             >
               <div className="text-4xl mb-3" style={{ color: skill.color }}>
                 {skill.icon}

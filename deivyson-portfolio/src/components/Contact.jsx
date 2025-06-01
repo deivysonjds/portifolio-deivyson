@@ -8,7 +8,7 @@ export default function Contact() {
   const { theme } = useThemeStore();
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className={`${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} py-20`}>
       <div className="container mx-auto px-6">
         <h2 className={`text-3xl font-bold mb-12 text-center ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
           Get In <span className="text-purple-500">Touch</span>

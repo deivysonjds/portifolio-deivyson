@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="md:w-1/3 mt-10 md:mt-0">
           <div className="relative mx-auto mt-20">
 
-            <div className="transition hover:scale-120 relative z-10 w-full h-full rounded-full overflow-hidden border-4 border-purple-500 shadow-lg">
+            <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-4 border-purple-500 shadow-lg">
               <img
                 src="/perfil.JPG"
                 alt="Perfil"

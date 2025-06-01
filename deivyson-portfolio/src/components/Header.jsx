@@ -8,7 +8,7 @@ export default function Header() {
   const { theme } = useThemeStore();
 
   return (
-    <header className={`fixed w-full z-50 ${theme === 'dark' ? 'bg-black' : 'bg-white'} shadow-md`}>
+    <header className={`fixed w-full z-50 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
       <div className="container mx-auto px-6 py-4 flex justify-end items-center">
         
         <nav className="hidden md:flex space-x-8 mr-14">
