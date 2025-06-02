@@ -15,7 +15,16 @@ export const projects = [
     description: 'Uma plataforma de conversão de moeda, temperatura e medidas, com uma interface intuitiva e fácil de usar.',
     technologies: ['React.js','nexts.js', 'Tailwind CSS'],
     imgUrl: '/projeto_2.jpeg',
-    githubUrl: 'https://github.com/username/task-manager',
-    liveUrl: 'https://tasks.example.com',
+    githubUrl: 'https://github.com/deivysonjds/conversores',
+    liveUrl: 'https://conversores-delta.vercel.app/',
+  },
+  {
+    id: 3,
+    title: 'Bulls and Cows',
+    description: 'Jogo de adivinhação de senhas.',
+    technologies: ['React.js','nexts.js', 'Tailwind CSS'],
+    imgUrl: '/projeto_3.jpeg',
+    githubUrl: 'https://github.com/deivysonjds/bac-react',
+    liveUrl: 'https://bac-react-nine.vercel.app/',
   }
 ];
