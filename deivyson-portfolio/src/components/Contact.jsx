@@ -22,8 +22,8 @@ export default function Contact() {
     e.preventDefault();
 
     const message = `*Nova mensagem via site*\n\n *Nome:* ${name}\n *E-mail:* ${email}\n *Assunto:* ${title}\n\n *Mensagem:*\n${body}`;
-    const phoneNumber = process.env.NEXT_PUBLIC_NUMBER;
-
+    const phoneNumber = '5581988993441'; 
+    
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
 
