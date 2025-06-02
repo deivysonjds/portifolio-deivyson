@@ -6,8 +6,8 @@ import ThemeProvider from './theme-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Modern Portfolio',
-  description: 'A modern portfolio with theme switching',
+  title: 'Deivyson J.',
+  description: 'Portfolio de Deivyson J.',
 };
 
 export default function RootLayout({ children }) {
